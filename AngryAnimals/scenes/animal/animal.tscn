@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://d0g0qxj2gsmjy"]
+
+[ext_resource type="Script" path="res://scenes/animal/animal.gd" id="1_63a2q"]
+[ext_resource type="Texture2D" uid="uid://bwfeuwluxk6wa" path="res://assets/player/parrot.png" id="1_mxpr2"]
+[ext_resource type="Texture2D" uid="uid://fiqno38cgf01" path="res://assets/items/arrow.png" id="3_www4k"]
+[ext_resource type="AudioStream" uid="uid://dedjkytlxg6ga" path="res://assets/audio/stretch2.ogg" id="4_y8xmc"]
+[ext_resource type="AudioStream" uid="uid://fham3hohnw7i" path="res://assets/audio/catapult.ogg" id="5_3lyts"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_so4fw"]
+radius = 19.0
+
+[node name="Animal" type="RigidBody2D"]
+position = Vector2(185, 182)
+input_pickable = true
+freeze = true
+script = ExtResource("1_63a2q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_mxpr2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_so4fw")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(7.7486e-07, 1.78814e-06)
+scale = Vector2(1.9, 1.9)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -27.0
+offset_top = -65.0
+offset_right = 28.0
+offset_bottom = -42.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "DEBUG"
+
+[node name="Arrow" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_www4k")
+offset = Vector2(150, 2.08165e-12)
+
+[node name="StretchSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_y8xmc")
+
+[node name="LaunchSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_3lyts")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
