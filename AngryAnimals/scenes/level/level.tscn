@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_7my0q"]
 [ext_resource type="Texture2D" uid="uid://putpudnwbs2l" path="res://assets/scene/colored_castle.png" id="1_akk7g"]
 [ext_resource type="PackedScene" uid="uid://cqklromb6aaxy" path="res://scenes/water/water.tscn" id="2_b0y5h"]
-[ext_resource type="PackedScene" uid="uid://vxt6oqlk1s1" path="res://scenes/cup.tscn" id="4_aesr3"]
+[ext_resource type="PackedScene" uid="uid://vxt6oqlk1s1" path="res://scenes/cup/cup.tscn" id="4_aesr3"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_7my0q")
@@ -14,17 +14,17 @@ scale = Vector2(1.2, 1.2)
 texture = ExtResource("1_akk7g")
 
 [node name="AnimalStart" type="Marker2D" parent="."]
-position = Vector2(108, 500)
+position = Vector2(97, 449)
 
 [node name="Water" parent="." instance=ExtResource("2_b0y5h")]
 z_index = 1
 position = Vector2(13, 600)
 
 [node name="Cup" parent="." instance=ExtResource("4_aesr3")]
-position = Vector2(328, 524)
+position = Vector2(342, 531)
 
 [node name="Cup2" parent="." instance=ExtResource("4_aesr3")]
 position = Vector2(925, 310)
 
 [node name="Cup3" parent="." instance=ExtResource("4_aesr3")]
-position = Vector2(573, 391)
+position = Vector2(611, 443)
