@@ -1,5 +1,6 @@
+res://scenes/cup/cup.gd
+res://scenes/cup/cup.tscn
+res://singletons/signal_manager.gd
 res://scenes/animal/animal.tscn
-res://scenes/level/level.tscn
-res://scenes/cup.tscn
-res://scenes/water/water.tscn
 res://scenes/animal/animal.gd
+res://scenes/level/level.tscn
